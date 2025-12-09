@@ -5,8 +5,8 @@ Below are the detailed deployment steps and the security configurations applied 
 
 
 
-**1. DynamoDB Setup
-**
+**1. DynamoDB Setup**
+
 Deployment Steps
 	1.	Created a DynamoDB table named QuotesTable
 	2.	Partition key: quote_id (String)
@@ -19,8 +19,8 @@ Security
 
 
 
-**2. Lambda Function Deployment
-**
+**2. Lambda Function Deployment**
+
 Deployment Steps
 	1.	Created a new Lambda function (GetRandomQuoteFunction)
 	2.	Runtime: Python 3.x
@@ -41,8 +41,8 @@ Security
 
 
 
-**3. API Gateway Setup
-**
+**3. API Gateway Setup**
+
 Deployment Steps
 	1.	Created an HTTP API (not REST API) for simplicity and low cost.
 	2.	Created one route:
@@ -59,8 +59,8 @@ Security
 
 
 
-**4. S3 Static Website Hosting
-**
+**4. S3 Static Website Hosting**
+
 Deployment Steps
 	1.	Created an S3 bucket named quote-of-the-day-cloud-402
 	2.	Enabled Static website hosting
@@ -71,21 +71,18 @@ Deployment Steps
 Security
 	•	Block Public Access was turned off ONLY for this bucket because frontend must be public.
 	•	Public access is limited to:
-
-  s3:GetObject
-
-  •	No write, delete, or upload operations allowed.
+			s3:GetObject
+  	•	No write, delete, or upload operations allowed.
 	•	Bucket does NOT store sensitive data (HTML only).
 
 
 
-**5. Connecting Frontend to API Gateway
-**
+**5. Connecting Frontend to API Gateway**
+
 Deployment Steps
 	1.	Updated JavaScript in index.html:
     fetch("https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote")
-    
-  2.	Uploaded updated HTML to S3.
+  	2.	Uploaded updated HTML to S3.
 	3.	Tested on browser — new quotes load dynamically.
 
   Security
@@ -95,8 +92,7 @@ Deployment Steps
 
 
     
-**6. Overall Security Measures
-**
+**6. Overall Security Measures**
 
 ✔ AWS IAM Least Privilege
 
