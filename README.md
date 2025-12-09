@@ -1,8 +1,7 @@
 # 🌸 Quote of the Day – Serverless Web App
 A fully serverless motivational quote generator using AWS DynamoDB, Lambda, API Gateway, and S3.
 
-🌟 Overview
-
+**🌟 Overview**
 This project is a serverless web application that displays a random motivational quote each time the page loads or the user clicks “New Quote.”
 
 It uses:
@@ -12,7 +11,7 @@ It uses:
 	•	S3 Static Website Hosting to serve the frontend
 	•	IAM roles & policies to secure the application
 
-  🏗️ Architecture Diagram
+**🏗️ Architecture Diagram**
 
    S3 Website (HTML/CSS/JS)
            |
@@ -26,7 +25,7 @@ It uses:
        DynamoDB Table
 
 
-🚀 Features
+**🚀 Features**
 	•	Fully serverless (no servers to manage)
 	•	Low cost (Lambda + DynamoDB + S3)
 	•	Secure (IAM least-privilege model)
@@ -34,7 +33,7 @@ It uses:
 	•	Cute pink-themed UI ✨💗
 	•	Fast API response using HTTP API Gateway
 
-  🗃️ Project Structure
+**🗃️ Project Structure**
       quote-of-the-day-cloud-project/
     │
     ├── lambda/
@@ -54,7 +53,7 @@ It uses:
     └── README.md
 
 
-🧩 Frontend
+**🧩 Frontend**
 
 The frontend is a cute, pink-themed HTML page hosted on Amazon S3:
 
@@ -69,7 +68,7 @@ fetch("https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote")
 
 
 
-🧠 Backend Logic
+**🧠 Backend Logic**
 
 Lambda Function
 
@@ -89,7 +88,7 @@ Example Response:
 
 
 
-☁️ AWS Deployment Steps
+**☁️ AWS Deployment Steps**
 
 1. DynamoDB Setup
 	•	Created table: QuotesTable
@@ -119,7 +118,7 @@ https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote
 
 
 
-🔐 Security Configurations
+**🔐 Security Configurations**
 
 ✔ IAM Least Privilege
 
@@ -146,7 +145,7 @@ Only readable through Lambda (never public).
 
 
 
-🖼️ Screenshots
+**🖼️ Screenshots**
 
 Screenshots of each AWS component are included in:
 
@@ -164,14 +163,14 @@ They demonstrate:
 
 
 
-💻 How to Run Locally (Optional)
+**💻 How to Run Locally (Optional)**
 
 You can open frontend/index.html in any browser.
 Quotes will still load as long as the API Gateway URL is correct.
 
 
 
-🎯 Summary
+**🎯 Summary**
 
 This project demonstrates best practices in AWS serverless design:
 	•	Minimal cost
