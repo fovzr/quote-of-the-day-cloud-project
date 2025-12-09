@@ -34,27 +34,37 @@ It uses:
 	
 •	Fast API response using HTTP API Gateway
 
+
 **Project Structure**
-      **quote-of-the-day-cloud-project/**
+
+**quote-of-the-day-cloud-project/**
       - lambda/
         - lambda_function.py
+
 	   
 **frontend/**
-        -  index.html
-      - **config/**
-  		-  bucket-policy.json
-		-  dynamodb-schema.json
-   		-  lambda-role-policy.json
-    
+
+-  index.html
+  
+ **config/**
+ 
+  -  bucket-policy.json
+  -  dynamodb-schema.json
+  -  lambda-role-policy.json
+
+	
  -  **screenshots/**
-  		-  (AWS screenshots)
+
+  	-  (AWS screenshots)
 		
   	
 
 
 **Frontend**
 
+
 The frontend is pink-themed HTML page hosted on Amazon S3:
+
 
 Live Website:
 
@@ -72,9 +82,13 @@ fetch("https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote")
 Lambda Function
 
 Located in lambda/lambda_function.py.
-	•	Scans DynamoDB table
-	•	Selects a random quote
-	•	Returns JSON response
+
+•	Scans DynamoDB table
+
+•	Selects a random quote
+
+•	Returns JSON response
+
 
 Example Response:
 
@@ -90,28 +104,44 @@ Example Response:
 
 1. DynamoDB Setup
 	•	Created table: QuotesTable
+
 	•	Partition key: quote_id (String)
+
 	•	Inserted 10 sample quotes
 
-2. Lambda Deployment
+3. Lambda Deployment
 	•	Function: GetRandomQuote
-	•	Runtime: Python 3.x
-	•	Environment variable:
-TABLE_NAME = QuotesTable
-	•	IAM role grants read-only DynamoDB access
 
-3. API Gateway Deployment
+	•	Runtime: Python 3.x
+
+	•	Environment variable:
+
+TABLE_NAME = QuotesTable
+
+•	IAM role grants read-only DynamoDB access
+
+
+5. API Gateway Deployment
 	•	Created HTTP API
+
 	•	Route: GET /quote
+
 	•	Lambda integration
+
 	•	Stage: prod
+
 	•	Public endpoint:
+
 https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote
 
-4. S3 Website Hosting
+
+7. S3 Website Hosting
 	•	Bucket: quote-of-the-day-cloud-402
+
 	•	Static website hosting enabled
+
 	•	Public read-only access via bucket policy
+
 	•	Uploaded index.html
 
 
@@ -150,14 +180,22 @@ Screenshots of each AWS component are included in:
 screenshots/
 
 They demonstrate:
-	•	DynamoDB table
-	•	Lambda code
-	•	Lambda test response
-	•	API Gateway route
-	•	API Gateway stage + invoke URL
-	•	S3 bucket hosting
-	•	Bucket policy
-	•	Final hosted website
+
+•	DynamoDB table
+	
+•	Lambda code
+	
+•	Lambda test response
+	
+•	API Gateway route
+	
+•	API Gateway stage + invoke URL
+	
+•	S3 bucket hosting
+	
+•	Bucket policy
+	
+•	Final hosted website
 
 
 
@@ -169,11 +207,17 @@ Quotes will still load as long as the API Gateway URL is correct.
 
 
 This project demonstrates best practices in AWS serverless design:
-	•	Minimal cost
-	•	Highly secure
-	•	Scalable
-	•	Clean architecture
-	•	Real-time API integration
-	•	Polished UI
+
+•	Minimal cost
+	
+•	Highly secure
+	
+•	Scalable
+	
+•	Clean architecture
+	
+•	Real-time API integration
+	
+•	Polished UI
 
 
