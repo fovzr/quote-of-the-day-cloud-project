@@ -154,9 +154,15 @@ Reduces attack surface (no servers, no SSH, no open ports).
 **Summary**
 
 The deployment follows AWS security best practices:
+
 	•	Public only where necessary (Static website + GET API)
+	
 	•	Private everywhere else (DynamoDB, Lambda)
+	
 	•	IAM least-privilege policies
+	
 	•	No write operations
+	
 	•	HTTPS endpoints only
+	
 This ensures the system is secure, low-cost, and fully serverless.
