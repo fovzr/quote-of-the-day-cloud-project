@@ -9,11 +9,9 @@ Below are the detailed deployment steps and the security configurations applied 
 
 Deployment Steps:
 
-	1.  Created a DynamoDB table named QuotesTable.
-	
-	2.	Partition key: quote_id (String).
-	
-	3.	Added 10 initial quote records using the AWS Console.
+1.  Created a DynamoDB table named QuotesTable.
+2.	Partition key: quote_id (String).
+3.	Added 10 initial quote records using the AWS Console.
 
 Security
 
