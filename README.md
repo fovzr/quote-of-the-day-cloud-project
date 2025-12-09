@@ -38,8 +38,10 @@ It uses:
 **Project Structure**
 
 **quote-of-the-day-cloud-project/**
-      - lambda/
-        - lambda_function.py
+
+- lambda/
+  
+   - lambda_function.py
 
 	   
 **frontend/**
