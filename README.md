@@ -22,12 +22,16 @@ It uses:
 
 
 **Features**
-	•	Fully serverless (no servers to manage)
-	•	Low cost (Lambda + DynamoDB + S3)
-	•	Secure (IAM least-privilege model)
-	•	Random quote retrieval
-	•	Cute pink-themed UI ✨💗
-	•	Fast API response using HTTP API Gateway
+
+•	Fully serverless (no servers to manage)
+	
+•	Low cost (Lambda + DynamoDB + S3)
+	
+•	Secure (IAM least-privilege model)
+	
+•	Random quote retrieval
+	
+•	Fast API response using HTTP API Gateway
 
 **Project Structure**
       **quote-of-the-day-cloud-project/**
