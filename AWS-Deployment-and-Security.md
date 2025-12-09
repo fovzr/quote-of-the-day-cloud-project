@@ -133,21 +133,21 @@ Deployment Steps
     
 **6. Overall Security Measures**
 
-✔ AWS IAM Least Privilege
+- AWS IAM Least Privilege
 
-Only Lambda can access DynamoDB.
+	Only Lambda can access DynamoDB.
 
-✔ S3 Bucket Restricted
+- S3 Bucket Restricted
 
-Only GetObject is public, nothing else.
+	Only GetObject is public, nothing else.
 
-✔ No Hardcoded Secrets
+- No Hardcoded Secrets
 
-Project does not require secret keys or tokens.
+	Project does not require secret keys or tokens.
 
-✔ Serverless Architecture
+- Serverless Architecture
 
-Reduces attack surface (no servers, no SSH, no open ports).
+	Reduces attack surface (no servers, no SSH, no open ports).
 
 
 
