@@ -1,7 +1,0 @@
-{
-  "TableName": "QuotesTable",
-  "PartitionKey": {
-    "AttributeName": "quote_id",
-    "AttributeType": "S"
-  }
-}
