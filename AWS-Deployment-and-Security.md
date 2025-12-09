@@ -63,8 +63,11 @@ Deployment Steps
 Security
 
 •	The API is public only for read access (GET quotes).
+
 •	No write/update endpoints exist.
+
 •	No API keys required since the app is read-only.
+
 •	HTTPS is enforced automatically by AWS.
 
 
@@ -82,9 +85,12 @@ Deployment Steps
 Security
 
 •	Block Public Access was turned off ONLY for this bucket because frontend must be public.
+
 •	Public access is limited to:
 	s3:GetObject	
+
 •	No write, delete, or upload operations allowed.
+
 •	Bucket does NOT store sensitive data (HTML only).
 
 
@@ -103,7 +109,9 @@ Deployment Steps
   Security
   
 •	Browser can only GET quotes — cannot modify anything.
+
 •	No credentials stored in the frontend.
+
 •	CORS enabled only for the website domain.
 
 
@@ -133,9 +141,13 @@ Deployment Steps
 The deployment follows AWS security best practices:
 
 •	Public only where necessary (Static website + GET API)
+
 •	Private everywhere else (DynamoDB, Lambda)
+
 •	IAM least-privilege policies
+
 •	No write operations
+
 •	HTTPS endpoints only
 	
 This ensures the system is secure, low-cost, and fully serverless.
