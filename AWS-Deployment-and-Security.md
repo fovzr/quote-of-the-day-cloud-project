@@ -7,9 +7,12 @@ Below are the detailed deployment steps and the security configurations applied 
 
 **1. DynamoDB Setup**
 
-Deployment Steps
+Deployment Steps:
+
 	1.  Created a DynamoDB table named QuotesTable.
+	
 	2.	Partition key: quote_id (String).
+	
 	3.	Added 10 initial quote records using the AWS Console.
 
 Security
@@ -23,21 +26,31 @@ Security
 **2. Lambda Function Deployment**
 
 Deployment Steps
+
 	1.	Created a new Lambda function (GetRandomQuoteFunction)
+	
 	2.	Runtime: Python 3.x
+	
 	3.	Added code to:
-	•	Scan DynamoDB table
-	•	Select a random quote
-	•	Return quote as JSON
+	
+			•	Scan DynamoDB table
+			•	Select a random quote
+			•	Return quote as JSON
+			
 	4.	Attached IAM role with permissions to read from DynamoDB.
+	
 	5.	Tested the function using “Test” in Lambda console.
 
 Security
+
 	•	Lambda function runs inside AWS-managed infrastructure (no public exposure).
+	
 	•	IAM policy only allows:
-	•	dynamodb:Scan
-	•	dynamodb:GetItem
+		•	dynamodb:Scan
+		•	dynamodb:GetItem
+		
 	•	No write or delete permissions were given (principle of least privilege).
+	
 	•	Environment variables remain empty (no secrets stored in code).
 
 
@@ -45,17 +58,26 @@ Security
 **3. API Gateway Setup**
 
 Deployment Steps
+
 	1.	Created an HTTP API (not REST API) for simplicity and low cost.
+	
 	2.	Created one route:
-	•	GET /quote
+		•	GET /quote
+		
 	3.	Integrated this route with the Lambda function.
-	4.	Deployed the API to a stage named prod
+	
+	4.	Deployed the API to a stage named prod.
+	
 	5.	Tested the API using the invoke URL.
 
 Security
+
 	•	The API is public only for read access (GET quotes).
+	
 	•	No write/update endpoints exist.
+	
 	•	No API keys required since the app is read-only.
+	
 	•	HTTPS is enforced automatically by AWS.
 
 
@@ -63,17 +85,26 @@ Security
 **4. S3 Static Website Hosting**
 
 Deployment Steps
+
 	1.	Created an S3 bucket named quote-of-the-day-cloud-402
+	
 	2.	Enabled Static website hosting
+	
 	3.	Set index document = index.html
+	
 	4.	Uploaded index.html (frontend)
+	
 	5.	Set the bucket to “Public website mode” by adding a bucket policy.
 
 Security
+
 	•	Block Public Access was turned off ONLY for this bucket because frontend must be public.
+	
 	•	Public access is limited to:
 			s3:GetObject
+			
   	•	No write, delete, or upload operations allowed.
+	
 	•	Bucket does NOT store sensitive data (HTML only).
 
 
@@ -81,15 +112,21 @@ Security
 **5. Connecting Frontend to API Gateway**
 
 Deployment Steps
+
 	1.	Updated JavaScript in index.html:
+	
     fetch("https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote")
 	
   	2.	Uploaded updated HTML to S3.
+	
 	3.	Tested on browser — new quotes load dynamically.
 
   Security
+  
 	•	Browser can only GET quotes — cannot modify anything.
+	
 	•	No credentials stored in the frontend.
+	
 	•	CORS enabled only for the website domain.
 
 
