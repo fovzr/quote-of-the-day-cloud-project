@@ -7,6 +7,7 @@ This project is a serverless web application that displays a random motivational
 
 It uses:
 	•	DynamoDB to store quotes
+	
 	•	Lambda to select a random quote
 	•	API Gateway to expose the Lambda function
 	•	S3 Static Website Hosting to serve the frontend
