@@ -16,7 +16,9 @@ Deployment Steps:
 Security
 
 •	DynamoDB inherits security from IAM roles (no public access).
+
 •	Only the Lambda function is allowed to read from the table through its execution role.
+
 •	No public-read or write access is allowed.
 
 
@@ -29,10 +31,12 @@ Deployment Steps
 2.	Runtime: Python 3.x
 3.	Added code to:
 	•	Scan DynamoDB table
+
 	•	Select a random quote
+
 	•	Return quote as JSON			
-4.	Attached IAM role with permissions to read from DynamoDB.
-5.	Tested the function using “Test” in Lambda console.
+5.	Attached IAM role with permissions to read from DynamoDB.
+6.	Tested the function using “Test” in Lambda console.
 
 Security
 
