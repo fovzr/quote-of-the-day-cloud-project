@@ -13,6 +13,7 @@ Deployment Steps
 	3.	Added 10 initial quote records using the AWS Console
 
 Security
+
 	•	DynamoDB inherits security from IAM roles (no public access).
 	•	Only the Lambda function is allowed to read from the table through its execution role.
 	•	No public-read or write access is allowed.
@@ -82,6 +83,7 @@ Security
 Deployment Steps
 	1.	Updated JavaScript in index.html:
     fetch("https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote")
+	
   	2.	Uploaded updated HTML to S3.
 	3.	Tested on browser — new quotes load dynamically.
 
