@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffd6e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 450px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff4da6;
+            font-size: 26px;
+        }
+        #quote {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        #author {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background: #ff4da6;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #ff66b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>✨ Quote of the Day ✨</h1>
+
+    <div id="quote">Loading...</div>
+    <div id="author"></div>
+
+    <button class="btn" onclick="loadQuote()">💖 New Quote</button>
+</div>
+
+<script>
+    const API_URL = "YOUR_API_GATEWAY_URL/quote";
+
+    async function loadQuote() {
+        try {
+            const res = await fetch(API_URL);
+            const data = await res.json();
+
+            document.getElementById('quote').textContent = data.text;
+            document.getElementById('author').textContent = "— " + data.author;
+        } catch (err) {
+            document.getElementById('quote').textContent = "Error loading quote.";
+            document.getElementById('author').textContent = "";
+        }
+    }
+
+    loadQuote();
+</script>
+
+</body>
+</html>
