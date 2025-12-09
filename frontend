@@ -63,7 +63,7 @@
 </div>
 
 <script>
-    const API_URL = "YOUR_API_GATEWAY_URL/quote";
+    const API_URL = "http://quote-of-the-day-cloud-402.s3-website-us-east-1.amazonaws.com";
 
     async function loadQuote() {
         try {
