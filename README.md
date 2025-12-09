@@ -57,7 +57,7 @@ It uses:
 	
  -  **screenshots/**
 
-  	-  (AWS screenshots)
+  	-  (screenshots)
 		
   	
 
@@ -150,26 +150,26 @@ https://4wcmhpqcik.execute-api.eu-north-1.amazonaws.com/prod/quote
 
 **Security Configurations**
 
-✔ IAM Least Privilege
+  IAM Least Privilege
 
 Lambda only has permission to:
 
 dynamodb:Scan
 
-✔ S3 Bucket Public Access
+  S3 Bucket Public Access
 
 Only GetObject is public:
 No write, delete, or upload allowed.
 
-✔ HTTPS Everywhere
+  HTTPS Everywhere
 
 API Gateway uses HTTPS by default.
 
-✔ No Secrets Exposed
+  No Secrets Exposed
 
 Frontend contains no credentials.
 
-✔ DynamoDB Fully Private
+  DynamoDB Fully Private
 
 Only readable through Lambda (never public).
 
